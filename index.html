@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Halaman Depan</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      overflow-x: hidden;
+    }
+
+    .background {
+      background: url('backgroundpages.jpeg') no-repeat center center fixed;
+      background-size: cover;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -2;
+    }
+
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.5);
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #4482ff;
+      color: white;
+      padding: 12px 18px;
+      position: relative;
+      z-index: 1001;
+    }
+
+    .navbar h1 {
+      font-size: 20px;
+      margin: 0;
+    }
+
+    .logo-container {
+      display: flex;
+      gap: 5px;
+    }
+
+    .logo-container img {
+      height: 40px;
+    }
+
+    .menu-toggle {
+      font-size: 24px;
+      cursor: pointer;
+      display: block;
+      z-index: 1002;
+    }
+
+    /* Sidebar menu */
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: -250px;
+      width: 250px;
+      height: 100%;
+      background-color: #333;
+      padding-top: 60px;
+      transition: 0.3s ease;
+      z-index: 1000;
+    }
+
+    .sidebar.show {
+      left: 0;
+    }
+
+    .sidebar a {
+      display: block;
+      padding: 20px 20px;
+      text-decoration: none;
+      color: white;
+      font-size: 14px;
+      border-bottom: 1px solid #444;
+    }
+
+    .sidebar a:hover {
+      background-color: #575757;
+    }
+
+    .content {
+      padding: 40px 20px;
+      text-align: center;
+      color: #fff;
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+      position: relative;
+      z-index: 1;
+    }
+
+    .copyright {
+      position: fixed;
+      bottom: 8px;
+      left: 12px;
+      font-size: 12px;
+      color: white;
+      opacity: 0.7;
+      z-index: 10;
+    }
+
+    /* Optional: dark overlay when sidebar is open */
+    .overlay-sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      display: none;
+      z-index: 999;
+    }
+
+    .overlay-sidebar.show {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="background"></div>
+  <div class="overlay"></div>
+
+  <!-- SIDEBAR -->
+  <div class="sidebar" id="sidebar">
+    <a href="index.html">🏠 Beranda</a>
+    <a href="kegiatan.html">📅 Kegiatan</a>
+    <a href="divisi.html">👥 Divisi</a>
+    <a href="galeri.html">📷 Galeri</a>
+    <a href="daftar.html">📝 Rekrutmen</a>
+  </div>
+
+  <!-- DARK OVERLAY SAAT SIDEBAR MUNCUL -->
+  <div class="overlay-sidebar" id="overlay" onclick="toggleSidebar()"></div>
+
+  <!-- NAVBAR -->
+  <div class="navbar">
+    <h1>KIR SMA NEGERI 6 MEDAN</h1>
+    <div class="logo-container">
+      <img src="LOGO SMAN 6 MEDAN.png" alt="Logo 1">
+      <img src="LOGO KIR SMAN 6 MEDAN NEW.png" alt="Logo 2">
+    </div>
+    <div class="menu-toggle" onclick="toggleSidebar()">☰</div>
+  </div>
+
+  <!-- KONTEN UTAMA -->
+  <div class="content">
+    <h2>Selamat datang di Website Resmi Karya Ilmiah Remaja SMAN 6 MEDAN</h2>
+  </div>
+
+  <!-- SCRIPT SIDEBAR -->
+  <script>
+    function toggleSidebar() {
+      const sidebar = document.getElementById('sidebar');
+      const overlay = document.getElementById('overlay');
+      sidebar.classList.toggle('show');
+      overlay.classList.toggle('show');
+    }
+  </script>
+
+  <div class="copyright">© afrandovichsigmaxx</div>
+
+</body>
+</html>
