@@ -46,6 +46,43 @@
     .menu-toggle {
       font-size: 24px;
       cursor: pointer;
+      display: block;
+      z-index: 1002;
+    }
+
+    /* Sidebar menu */
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: -250px;
+      width: 250px;
+      height: 100%;
+      background-color: #333;
+      padding-top: 60px;
+      transition: 0.3s ease;
+      z-index: 1000;
+    }
+
+    .sidebar.show {
+      left: 0;
+    }
+
+    .sidebar a {
+      display: block;
+      padding: 20px 20px;
+      text-decoration: none;
+      color: white;
+      font-size: 14px;
+      border-bottom: 1px solid #444;
+    }
+
+    .sidebar a:hover {
+      background-color: #575757;
+    }
+
+    .menu-toggle {
+      font-size: 24px;
+      cursor: pointer;
       z-index: 1002;
     }
 
@@ -75,22 +112,22 @@
     }
 
     .overlay-content h2 {
-      font-size: 30px;
-      margin-bottom: 10px;
+      font-size: 26px;
+      margin-bottom: 12px;
     }
 
     .overlay-content h3 {
       font-size: 20px;
       font-weight: normal;
-      margin-bottom: 30px;
+      margin-bottom: 32px;
     }
 
     .cta-button {
       display: inline-block;
       background-color: #f44336;
       color: white;
-      padding: 14px 28px;
-      font-size: 16px;
+      padding: 16px 32px;
+      font-size: 18px;
       border: none;
       border-radius: 8px;
       text-decoration: none;
@@ -111,13 +148,13 @@
     }
 
     .about-section h2 {
-      font-size: 28px;
-      margin-bottom: 20px;
+      font-size: 30px;
+      margin-bottom: 22px;
     }
 
     .about-section p {
-      font-size: 16px;
-      line-height: 1.5;
+      font-size: 17px;
+      line-height: 1.6;
       max-width: 800px;
       margin: 0 auto;
     }
@@ -170,75 +207,6 @@
       color: #aaa;
     }
 
-    /* Sidebar styles */
-    .sidebar {
-      position: fixed;
-      top: 0;
-      left: -250px;
-      width: 250px;
-      height: 100%;
-      background-color: #333;
-      padding-top: 60px;
-      transition: 0.3s ease;
-      z-index: 1000;
-    }
-
-    .sidebar.show {
-      left: 0;
-    }
-
-    .sidebar a {
-      display: block;
-      padding: 20px;
-      text-decoration: none;
-      color: white;
-      font-size: 14px;
-      border-bottom: 1px solid #444;
-    }
-
-    .sidebar a:hover {
-      background-color: #575757;
-    }
-
-    /* Overlay */
-    .overlay-sidebar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
-      display: none;
-      z-index: 999;
-    }
-
-    .overlay-sidebar.show {
-      display: block;
-    }
-
-    /* Responsive Fixes */
-    @media (max-width: 768px) {
-      .overlay-content h2 {
-        font-size: 20px;
-      }
-
-      .overlay-content h3 {
-        font-size: 14px;
-      }
-
-      .cta-button {
-        font-size: 14px;
-        padding: 10px 20px;
-      }
-
-      .navbar h1 {
-        font-size: 16px;
-      }
-
-      .logo-container img {
-        height: 30px;
-      }
-    }
   </style>
 </head>
 <body>
@@ -269,8 +237,8 @@
   <div class="hero-image">
     <img src="backgroundpages.png" alt="Hero Image">
     <div class="overlay-content">
-      <h2>Selamat datang di Website Resmi</h2>
-      <h2>Karya Ilmiah Remaja SMAN 6 MEDAN</h2>
+      <h2>Selamat datang di Website Resmi<br>
+        Karya Ilmiah Remaja SMAN 6 MEDAN</h2>
       <h3>Bergabunglah dengan komunitas pelajar ilmiah dan kreatif!</h3>
       <a href="daftar.html" class="cta-button">Gabung Sekarang</a>
     </div>
