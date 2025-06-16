@@ -5,33 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Halaman Depan</title>
   <style>
-    body, html {
+    * {
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
       height: 100%;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       overflow-x: hidden;
-    }
-
-    .background {
-      background: url('backgroundpages.jpeg') no-repeat center center fixed;
-      background-size: cover;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -2;
-    }
-
-    .overlay {
-      background-color: rgba(0, 0, 0, 0.5);
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
+      background-color: #fff;
     }
 
     .navbar {
@@ -62,11 +46,131 @@
     .menu-toggle {
       font-size: 24px;
       cursor: pointer;
-      display: block;
       z-index: 1002;
     }
 
-    /* Sidebar menu */
+    .hero-image {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .overlay-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: #fff;
+      text-align: center;
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+      padding: 0 20px;
+    }
+
+    .overlay-content h2 {
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+
+    .overlay-content h3 {
+      font-size: 20px;
+      font-weight: normal;
+      margin-bottom: 30px;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background-color: #f44336;
+      color: white;
+      padding: 14px 28px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    }
+
+    .cta-button:hover {
+      background-color: #d32f2f;
+    }
+
+    .about-section {
+      background-color: #fff;
+      color: #333;
+      padding: 60px 20px;
+      text-align: center;
+      box-shadow: 0 -5px 20px rgba(0,0,0,0.05);
+    }
+
+    .about-section h2 {
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    .about-section p {
+      font-size: 16px;
+      line-height: 1.5;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    footer.custom-footer {
+      background-color: rgba(28, 28, 28, 1);
+      color: white;
+      padding: 40px 20px 20px;
+      font-size: 13px;
+      backdrop-filter: blur(5px);
+    }
+
+    .footer-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .footer-column {
+      flex: 1 1 200px;
+    }
+
+    .footer-column h4 {
+      margin-bottom: 10px;
+      color: #f44336;
+    }
+
+    .footer-column p,
+    .footer-column a {
+      color: #ccc;
+      text-decoration: none;
+      margin: 6px 0;
+      display: block;
+    }
+
+    .footer-column a:hover {
+      color: white;
+      text-decoration: underline;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      margin-top: 30px;
+      border-top: 1px solid #444;
+      padding-top: 15px;
+      font-size: 12px;
+      color: #aaa;
+    }
+
+    /* Sidebar styles */
     .sidebar {
       position: fixed;
       top: 0;
@@ -85,7 +189,7 @@
 
     .sidebar a {
       display: block;
-      padding: 20px 20px;
+      padding: 20px;
       text-decoration: none;
       color: white;
       font-size: 14px;
@@ -96,26 +200,7 @@
       background-color: #575757;
     }
 
-    .content {
-      padding: 40px 20px;
-      text-align: center;
-      color: #fff;
-      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
-      position: relative;
-      z-index: 1;
-    }
-
-    .copyright {
-      position: fixed;
-      bottom: 8px;
-      left: 12px;
-      font-size: 12px;
-      color: white;
-      opacity: 0.7;
-      z-index: 10;
-    }
-
-    /* Optional: dark overlay when sidebar is open */
+    /* Overlay */
     .overlay-sidebar {
       position: fixed;
       top: 0;
@@ -134,9 +219,6 @@
 </head>
 <body>
 
-  <div class="background"></div>
-  <div class="overlay"></div>
-
   <!-- SIDEBAR -->
   <div class="sidebar" id="sidebar">
     <a href="index.html">🏠 Beranda</a>
@@ -146,10 +228,10 @@
     <a href="daftar.html">📝 Rekrutmen</a>
   </div>
 
-  <!-- DARK OVERLAY SAAT SIDEBAR MUNCUL -->
+  <!-- OVERLAY -->
   <div class="overlay-sidebar" id="overlay" onclick="toggleSidebar()"></div>
 
-  <!-- NAVBAR -->
+  <!-- Navbar -->
   <div class="navbar">
     <h1>KIR SMA NEGERI 6 MEDAN</h1>
     <div class="logo-container">
@@ -159,12 +241,54 @@
     <div class="menu-toggle" onclick="toggleSidebar()">☰</div>
   </div>
 
-  <!-- KONTEN UTAMA -->
-  <div class="content">
-    <h2>Selamat datang di Website Resmi Karya Ilmiah Remaja SMAN 6 MEDAN</h2>
+  <!-- Hero Image Section -->
+  <div class="hero-image">
+    <img src="backgroundpages.png" alt="Hero Image">
+    <div class="overlay-content">
+      <h2>Selamat datang di Website Resmi</h2>
+      <h2>Karya Ilmiah Remaja SMAN 6 MEDAN</h2>
+      <h3>Bergabunglah dengan komunitas pelajar ilmiah dan kreatif!</h3>
+      <a href="daftar.html" class="cta-button">Gabung Sekarang</a>
+    </div>
   </div>
 
-  <!-- SCRIPT SIDEBAR -->
+  <!-- Tentang Kami -->
+  <div class="about-section">
+    <h2>Tentang Kami</h2>
+    <p>Kami merupakan wadah bagi pelajar yang memiliki ketertarikan di bidang sains, sosial-humaniora, dan teknologi. Melalui berbagai kegiatan, kami belajar bersama, menumbuhkan rasa ingin tahu, dan mengembangkan keterampilan sesuai bidang yang diminati. Kami juga aktif menulis karya ilmiah sebagai salah satu bentuk penerapan dari apa yang kami pelajari dan diskusikan bersama. Di dalam kegiatan ini, kami terbiasa berdiskusi, berbagi ide, serta saling mendukung sesuai dengan minat dan potensi masing-masing.
+
+</p>
+  </div>
+
+  <!-- Footer -->
+  <footer class="custom-footer">
+    <div class="footer-content">
+      <div class="footer-column">
+        <h4>Powered by</h4>
+        <p>
+          <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub Logo" style="height: 18px;">
+          GitHub Pages
+        </p>
+        <p><span style="color: #f44336; font-weight: bold;">Made by</span> <a href="https://instagram.com/afrandovichsigmaxx" target="_blank">@afrandovichsigmaxx</a></p>
+      </div>
+      <div class="footer-column">
+        <h4>Official</h4>
+        <img src="LOGO KIR SMAN 6 MEDAN NEW.png" alt="Logo KIR" style="height: 40px; margin-right: 10px;">
+        <img src="LOGO SMAN 6 MEDAN.png" alt="Logo SMAN 6" style="height: 40px;">
+      </div>
+      <div class="footer-column">
+        <h4>Alamat Sekolah</h4>
+        <p>Jalan Ansari No. 34, Medan</p>
+        <p>Sumatera Utara, Indonesia</p>
+        <p>Kode Pos 20214</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 KIR SMA Negeri 6 Medan.</p>
+    </div>
+  </footer>
+
+  <!-- Sidebar Toggle Script -->
   <script>
     function toggleSidebar() {
       const sidebar = document.getElementById('sidebar');
@@ -173,8 +297,5 @@
       overlay.classList.toggle('show');
     }
   </script>
-
-  <div class="copyright">© afrandovichsigmaxx</div>
-
 </body>
 </html>
