@@ -43,6 +43,43 @@
       height: 40px;
     }
 
+    .menu-toggle {
+      font-size: 24px;
+      cursor: pointer;
+      display: block;
+      z-index: 1002;
+    }
+
+    /* Sidebar menu */
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: -250px;
+      width: 250px;
+      height: 100%;
+      background-color: #333;
+      padding-top: 60px;
+      transition: 0.3s ease;
+      z-index: 1000;
+    }
+
+    .sidebar.show {
+      left: 0;
+    }
+
+    .sidebar a {
+      display: block;
+      padding: 20px 20px;
+      text-decoration: none;
+      color: white;
+      font-size: 14px;
+      border-bottom: 1px solid #444;
+    }
+
+    .sidebar a:hover {
+      background-color: #575757;
+    }
+
     .hero-image {
       position: relative;
       width: 100%;
@@ -146,14 +183,29 @@
   </style>
 </head>
 <body>
+  <div class="background"></div>
+  <div class="overlay"></div>
 
-  <!-- Navbar -->
+  <!-- SIDEBAR -->
+  <div class="sidebar" id="sidebar">
+    <a href="index.html">🏠 Beranda</a>
+    <a href="kegiatan.html">📅 Kegiatan</a>
+    <a href="divisi.html">👥 Divisi</a>
+    <a href="galeri.html">📷 Galeri</a>
+    <a href="daftar.html">📝 Rekrutmen</a>
+  </div>
+
+  <!-- DARK OVERLAY SAAT SIDEBAR MUNCUL -->
+  <div class="overlay-sidebar" id="overlay" onclick="toggleSidebar()"></div>
+
+  <!-- NAVBAR -->
   <div class="navbar">
     <h1>KIR SMA NEGERI 6 MEDAN</h1>
     <div class="logo-container">
       <img src="LOGO SMAN 6 MEDAN.png" alt="Logo 1">
       <img src="LOGO KIR SMAN 6 MEDAN NEW.png" alt="Logo 2">
     </div>
+    <div class="menu-toggle" onclick="toggleSidebar()">☰</div>
   </div>
 
   <!-- Hero Image Section -->
@@ -172,7 +224,14 @@
     <h2>Tentang Kami</h2>
     <p>Kami merupakan wadah bagi pelajar yang memiliki ketertarikan di bidang sains, sosial-humaniora, dan teknologi. Melalui berbagai kegiatan, kami belajar bersama, menumbuhkan rasa ingin tahu, dan mengembangkan keterampilan sesuai bidang yang diminati. Kami juga aktif menulis karya ilmiah sebagai salah satu bentuk penerapan dari apa yang kami pelajari dan diskusikan bersama. Di dalam kegiatan ini, kami terbiasa berdiskusi, berbagi ide, serta saling mendukung sesuai dengan minat dan potensi masing-masing.</p>
   </div>
-
+<script>
+    function toggleSidebar() {
+      const sidebar = document.getElementById('sidebar');
+      const overlay = document.getElementById('overlay');
+      sidebar.classList.toggle('show');
+      overlay.classList.toggle('show');
+    }
+  </script>
   <!-- Footer -->
   <footer class="custom-footer">
     <div class="footer-content">
