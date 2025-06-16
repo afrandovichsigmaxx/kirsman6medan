@@ -6,12 +6,18 @@
   <title>KIR SMAN 6 MEDAN - Divisi</title>
   <style>
     /* ========== STYLE UMUM ========== */
-    body {
+    * {
       margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #ececec;
+      padding: 0;
+      box-sizing: border-box;
     }
 
+    html, body {
+      height: 100%;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      overflow-x: hidden;
+      background-color: #F5F5F5;
+    }
     .navbar {
       display: flex;
       align-items: center;
@@ -167,6 +173,54 @@
     .overlay-sidebar.show {
       display: block;
     }
+
+    footer.custom-footer {
+  background-color: rgba(28, 28, 28, 1);
+  color: white;
+  padding: 40px 20px 20px;
+  font-size: 13px;
+  backdrop-filter: blur(5px);
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-column {
+  flex: 1 1 200px;
+}
+
+.footer-column h4 {
+  margin-bottom: 10px;
+  color: #f44336;
+}
+
+.footer-column p,
+.footer-column a {
+  color: #ccc;
+  text-decoration: none;
+  margin: 6px 0;
+  display: block;
+}
+
+.footer-column a:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  border-top: 1px solid #444;
+  padding-top: 15px;
+  font-size: 12px;
+  color: #aaa;
+}
   </style>
 
   </style>
@@ -229,6 +283,7 @@
           Divisi ini cocok untuk kamu yang tertarik dengan teknologi, komputer, dan desain grafis. Kalau kamu suka membuat karya digital, coding, desain visual, atau penasaran dengan dunia teknologi informasi dan inovasi, divisi ini tempat yang tepat. Di sini kamu bisa mengasah kreativitas dan kemampuan teknis dalam bidang teknologi dan desain.
         </div>
       </div>
+      
     </div>
 
   </div>
@@ -243,7 +298,33 @@
     }
   </script>
 
-  <div class="copyright">© afrandovichsigmaxx</div>
-  
+  <!-- FOOTER -->
+<footer class="custom-footer">
+  <div class="footer-content">
+    <div class="footer-column">
+      <h4>Powered by</h4>
+      <p>
+        <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub Logo" style="height: 18px;">
+        GitHub Pages
+      </p>
+      <p><span style="color: #f44336; font-weight: bold;">Made by</span> <a href="https://instagram.com/afrandovichsigmaxx" target="_blank">@afrandovichsigmaxx</a></p>
+    </div>
+    <div class="footer-column">
+      <h4>Official</h4>
+      <img src="LOGO KIR SMAN 6 MEDAN NEW.png" alt="Logo KIR" style="height: 40px; margin-right: 10px;">
+      <img src="LOGO SMAN 6 MEDAN.png" alt="Logo SMAN 6" style="height: 40px;">
+    </div>
+    <div class="footer-column">
+      <h4>Alamat Sekolah</h4>
+      <p>Jalan Ansari No. 34, Medan</p>
+      <p>Sumatera Utara, Indonesia</p>
+      <p>Kode Pos 20214</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 KIR SMA Negeri 6 Medan.</p>
+  </div>
+</footer>
+
 </body>
 </html>
