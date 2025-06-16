@@ -43,49 +43,6 @@
       height: 40px;
     }
 
-    .menu-toggle {
-      font-size: 24px;
-      cursor: pointer;
-      display: block;
-      z-index: 1002;
-    }
-
-    /* Sidebar menu */
-    .sidebar {
-      position: fixed;
-      top: 0;
-      left: -250px;
-      width: 250px;
-      height: 100%;
-      background-color: #333;
-      padding-top: 60px;
-      transition: 0.3s ease;
-      z-index: 1000;
-    }
-
-    .sidebar.show {
-      left: 0;
-    }
-
-    .sidebar a {
-      display: block;
-      padding: 20px 20px;
-      text-decoration: none;
-      color: white;
-      font-size: 14px;
-      border-bottom: 1px solid #444;
-    }
-
-    .sidebar a:hover {
-      background-color: #575757;
-    }
-
-    .menu-toggle {
-      font-size: 24px;
-      cursor: pointer;
-      z-index: 1002;
-    }
-
     .hero-image {
       position: relative;
       width: 100%;
@@ -102,41 +59,21 @@
 
     .overlay-content {
       position: absolute;
-      top: 50%;
+      top: 40%;
       left: 50%;
       transform: translate(-50%, -50%);
       color: #fff;
       text-align: center;
-      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
-      padding: 0 20px;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 
     .overlay-content h2 {
-      font-size: 26px;
-      margin-bottom: 12px;
-    }
-
-    .overlay-content h3 {
-      font-size: 20px;
-      font-weight: normal;
-      margin-bottom: 32px;
-    }
-
-    .cta-button {
-      display: inline-block;
-      background-color: #f44336;
-      color: white;
-      padding: 16px 32px;
-      font-size: 18px;
-      border: none;
-      border-radius: 8px;
-      text-decoration: none;
-      transition: background-color 0.3s ease;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-    }
-
-    .cta-button:hover {
-      background-color: #d32f2f;
+      font-size: 24px;
+      font-weight: bolder;
+      line-height: 1;
+      margin: 0;
+      white-space: pre-line;
     }
 
     .about-section {
@@ -206,22 +143,9 @@
       font-size: 12px;
       color: #aaa;
     }
-
   </style>
 </head>
 <body>
-
-  <!-- SIDEBAR -->
-  <div class="sidebar" id="sidebar">
-    <a href="index.html">🏠 Beranda</a>
-    <a href="kegiatan.html">📅 Kegiatan</a>
-    <a href="divisi.html">👥 Divisi</a>
-    <a href="galeri.html">📷 Galeri</a>
-    <a href="daftar.html">📝 Rekrutmen</a>
-  </div>
-
-  <!-- OVERLAY -->
-  <div class="overlay-sidebar" id="overlay" onclick="toggleSidebar()"></div>
 
   <!-- Navbar -->
   <div class="navbar">
@@ -230,17 +154,16 @@
       <img src="LOGO SMAN 6 MEDAN.png" alt="Logo 1">
       <img src="LOGO KIR SMAN 6 MEDAN NEW.png" alt="Logo 2">
     </div>
-    <div class="menu-toggle" onclick="toggleSidebar()">☰</div>
   </div>
 
   <!-- Hero Image Section -->
   <div class="hero-image">
     <img src="backgroundpages.png" alt="Hero Image">
     <div class="overlay-content">
-      <h2>Selamat datang di Website Resmi<br>
-        Karya Ilmiah Remaja SMAN 6 MEDAN</h2>
-      <h3>Bergabunglah dengan komunitas pelajar ilmiah dan kreatif!</h3>
-      <a href="daftar.html" class="cta-button">Gabung Sekarang</a>
+      <h2>
+        Selamat Datang di Website Resmi<br>
+        Karya Ilmiah Remaja SMA Negeri 6 Medan
+      </h2>
     </div>
   </div>
 
@@ -277,15 +200,5 @@
       <p>&copy; 2025 KIR SMA Negeri 6 Medan.</p>
     </div>
   </footer>
-
-  <!-- Sidebar Toggle Script -->
-  <script>
-    function toggleSidebar() {
-      const sidebar = document.getElementById('sidebar');
-      const overlay = document.getElementById('overlay');
-      sidebar.classList.toggle('show');
-      overlay.classList.toggle('show');
-    }
-  </script>
 </body>
 </html>
