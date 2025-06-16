@@ -4,23 +4,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Daftar Anggota KIR SMA Negeri 6 Medan</title>
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    crossorigin="anonymous"
-  />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" />
   <style>
-    /* Reset & base */
     * {
+      margin: 0;
+      padding: 0;
       box-sizing: border-box;
     }
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: #ececec;
-      color: #2c3e50;
-      line-height: 1.6;
 
+    html, body {
+      height: 100%;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      overflow-x: hidden;
+      background-color: #F5F5F5;
     }
     .navbar {
       display: flex;
@@ -32,29 +28,23 @@
       position: relative;
       z-index: 1001;
     }
-
     .navbar h1 {
       font-size: 20px;
       margin: 0;
     }
-
     .logo-container {
       display: flex;
       gap: 5px;
     }
-
     .logo-container img {
       height: 40px;
     }
-
     .menu-toggle {
       font-size: 24px;
       cursor: pointer;
       display: block;
       z-index: 1002;
     }
-
-    /* Sidebar menu */
     .sidebar {
       position: fixed;
       top: 0;
@@ -66,11 +56,9 @@
       transition: 0.3s ease;
       z-index: 1000;
     }
-
     .sidebar.show {
       left: 0;
     }
-
     .sidebar a {
       display: block;
       padding: 20px 20px;
@@ -79,13 +67,9 @@
       font-size: 14px;
       border-bottom: 1px solid #444;
     }
-
     .sidebar a:hover {
       background-color: #575757;
     }
-    
-
-    /* ========== KONTEN ========== */
     .content {
       padding: 40px 20px;
       text-align: center;
@@ -94,18 +78,15 @@
       z-index: 1;
       position: relative;
     }
-    /* Copyright pojok kiri bawah */
-.copyright {
-  position: fixed;
-  bottom: 8px;
-  left: 12px;
-  font-size: 12px;
-  color: white;
-  opacity: 0.7;
-  z-index: 10;
-}
-
-    /* Content */
+    .copyright {
+      position: fixed;
+      bottom: 8px;
+      left: 12px;
+      font-size: 12px;
+      color: white;
+      opacity: 0.7;
+      z-index: 10;
+    }
     .container {
       max-width: 700px;
       margin: 40px auto 60px;
@@ -161,7 +142,6 @@
       background: #2a54c3;
       box-shadow: 0 7px 20px rgba(42, 84, 195, 0.6);
     }
-    /* Contact */
     .contact-info {
       max-width: 400px;
       margin: 0 auto 50px;
@@ -184,8 +164,6 @@
     .contact-info a:hover {
       text-decoration: underline;
     }
-
-    /* Sosmed */
     .social-buttons {
       display: flex;
       justify-content: center;
@@ -218,19 +196,9 @@
     .social-buttons i {
       font-size: 1.3rem;
     }
-
-    /* Responsive */
     @media (max-width: 480px) {
       .container {
         padding: 25px 20px;
-      }
-      .menu {
-        flex-basis: auto;
-        margin-top: 0;
-      }
-      .menu a {
-        padding: 8px 10px;
-        font-size: 0.9rem;
       }
       .btn-daftar {
         width: 100%;
@@ -245,18 +213,7 @@
         padding: 10px 20px;
         min-width: 120px;
       }
-     
     }
-     .copyright {
-      position: fixed;
-      bottom: 8px;
-      left: 12px;
-      font-size: 12px;
-      color: rgb(120, 119, 119);
-      opacity: 0.7;
-      z-index: 10;
-    }
-    /* Optional: dark overlay when sidebar is open */
     .overlay-sidebar {
       position: fixed;
       top: 0;
@@ -267,19 +224,60 @@
       display: none;
       z-index: 999;
     }
-
     .overlay-sidebar.show {
       display: block;
     }
-  </style>
+    footer.custom-footer {
+      background-color: rgba(28, 28, 28, 1);
+      color: white;
+      padding: 40px 20px 20px;
+      font-size: 13px;
+      backdrop-filter: blur(5px);
+    }
+
+    .footer-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .footer-column {
+      flex: 1 1 200px;
+    }
+
+    .footer-column h4 {
+      margin-bottom: 10px;
+      color: #f44336;
+    }
+
+    .footer-column p,
+    .footer-column a {
+      color: #ccc;
+      text-decoration: none;
+      margin: 6px 0;
+      display: block;
+    }
+
+    .footer-column a:hover {
+      color: white;
+      text-decoration: underline;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      margin-top: 30px;
+      border-top: 1px solid #444;
+      padding-top: 15px;
+      font-size: 12px;
+      color: #aaa;
+    }
   </style>
 </head>
 <body>
 
-  <div class="background"></div>
-  <div class="overlay"></div>
-
-  <!-- SIDEBAR -->
   <div class="sidebar" id="sidebar">
     <a href="index.html">🏠 Beranda</a>
     <a href="kegiatan.html">📅 Kegiatan</a>
@@ -288,10 +286,8 @@
     <a href="daftar.html">📝 Rekrutmen</a>
   </div>
 
-  <!-- DARK OVERLAY SAAT SIDEBAR MUNCUL -->
   <div class="overlay-sidebar" id="overlay" onclick="toggleSidebar()"></div>
 
-  <!-- NAVBAR -->
   <div class="navbar">
     <h1>KIR SMA NEGERI 6 MEDAN</h1>
     <div class="logo-container">
@@ -303,7 +299,6 @@
 
   <main class="container">
     <h2 class="section-title">Ayo Bergabung Jadi Anggota KIR</h2>
-
     <p class="intro-text">
       Bergabunglah bersama kami di KIR SMA Negeri 6 Medan untuk menyalurkan minat dan bakatmu dalam bidang Sains, Soshum dan/atau Teknologi. 
       Di sini, kamu akan mendapatkan pengalaman berharga, ilmu pengetahuan baru, serta kesempatan berkolaborasi dalam berbagai proyek ilmiah.
@@ -328,18 +323,46 @@
       <p><i class="fab fa-whatsapp"></i> +62 895-6260-06300 (RAKA)</p>
       <p><i class="fab fa-whatsapp"></i> +62 821-8310-8567 (NAUFAL)</p>
     </section>
+
     <section class="social-buttons">
-      <a href="https://www.instagram.com/kir.smansix?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener">
+      <a href="https://www.instagram.com/kir.smansix" target="_blank" rel="noopener">
         <i class="fab fa-instagram"></i> Instagram
       </a>
-      <a href="https://www.tiktok.com/@kirsman6medan?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener">
+      <a href="https://www.tiktok.com/@kirsman6medan" target="_blank" rel="noopener">
         <i class="fab fa-tiktok"></i> Tiktok 
+      </a>
       <a href="https://www.youtube.com/@KIRSMAN6Medan" target="_blank" rel="noopener">
         <i class="fab fa-youtube"></i> YouTube
       </a>
     </section>
   </main>
- <div class="copyright">© afrandovichsigmaxx</div>
+  <footer class="custom-footer">
+    <div class="footer-content">
+      <div class="footer-column">
+        <h4>Powered by</h4>
+        <p>
+          <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub Logo" style="height: 18px;">
+          GitHub Pages
+        </p>
+        <p><span style="color: #f44336; font-weight: bold;">Made by</span> <a href="https://instagram.com/afrandovichsigmaxx" target="_blank">@afrandovichsigmaxx</a></p>
+      </div>
+      <div class="footer-column">
+        <h4>Official</h4>
+        <img src="LOGO KIR SMAN 6 MEDAN NEW.png" alt="Logo KIR" style="height: 40px; margin-right: 10px;">
+        <img src="LOGO SMAN 6 MEDAN.png" alt="Logo SMAN 6" style="height: 40px;">
+      </div>
+      <div class="footer-column">
+        <h4>Alamat Sekolah</h4>
+        <p>Jalan Ansari No. 34, Medan</p>
+        <p>Sumatera Utara, Indonesia</p>
+        <p>Kode Pos 20214</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 KIR SMA Negeri 6 Medan.</p>
+    </div>
+  </footer>
+
   <script>
     function toggleSidebar() {
       const sidebar = document.getElementById('sidebar');
@@ -349,7 +372,5 @@
     }
   </script>
 
-  <div class="copyright">© afrandovichsigmaxx</div>
 </body>
 </html>
-</body>
