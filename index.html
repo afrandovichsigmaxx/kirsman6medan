@@ -50,35 +50,6 @@
       z-index: 1002;
     }
 
-    .sidebar {
-      position: fixed;
-      top: 0;
-      left: -250px;
-      width: 250px;
-      height: 100%;
-      background-color: #333;
-      padding-top: 60px;
-      transition: 0.3s ease;
-      z-index: 1000;
-    }
-
-    .sidebar.show {
-      left: 0;
-    }
-
-    .sidebar a {
-      display: block;
-      padding: 20px 20px;
-      text-decoration: none;
-      color: white;
-      font-size: 14px;
-      border-bottom: 1px solid #444;
-    }
-
-    .sidebar a:hover {
-      background-color: #575757;
-    }
-
     .hero-image {
       position: relative;
       width: 100%;
@@ -163,31 +134,6 @@
         text-align: left;
       }
     }
-    .divisi-hero {
-  background: url('divisi-background.png') no-repeat center center;
-  background-size: cover;
-  padding: 100px 20px 60px;
-  text-align: center;
-  color: #003366;
-}
-
-.divisi-hero h2 {
-  font-size: 30px;
-  margin-bottom: 50px;
-  color: #003366;
-}
-
-.divisi-grid {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 40px;
-  margin-bottom: 40px;
-}
-
-.divisi-item {
-  max-width: 220px;
-}
 
 .circle-icon {
   width: 140px;
@@ -211,10 +157,6 @@
   background-color: #fff;
 }
 
-.divisi-item h3 {
-  font-size: 18px;
-  margin: 0;
-}
 
 .btn-container {
   margin-top: 20px;
@@ -298,18 +240,6 @@
   <div class="background"></div>
   <div class="overlay"></div>
 
-  <!-- SIDEBAR -->
-  <div class="sidebar" id="sidebar">
-    <a href="index.html">🏠 Beranda</a>
-    <a href="kegiatan.html">📅 Kegiatan</a>
-    <a href="divisi.html">👥 Divisi</a>
-    <a href="galeri.html">📷 Galeri</a>
-    <a href="daftar.html">📝 Rekrutmen</a>
-  </div>
-
-  <!-- DARK OVERLAY SAAT SIDEBAR MUNCUL -->
-  <div class="overlay-sidebar" id="overlay" onclick="toggleSidebar()"></div>
-
   <!-- NAVBAR -->
   <div class="navbar">
     <h1>KIR SMA NEGERI 6 MEDAN</h1>
@@ -343,45 +273,6 @@
     </div>
   </div>
 
-<div class="divisi-hero">
-  <h2>Divisi KIR SMAN 6 Medan</h2>
-  <div class="divisi-grid">
-    <div class="divisi-item">
-      <div class="circle-icon">
-        <img src="sains.png" alt="Divisi Sains">
-      </div>
-      <h3>Divisi Sains</h3>
-    </div>
-    <div class="divisi-item">
-      <div class="circle-icon">
-        <img src="soshum.png" alt="Divisi Sosial dan Humaniora">
-      </div>
-      <h3>Divisi Sosial dan Humaniora</h3>
-    </div>
-    <div class="divisi-item">
-      <div class="circle-icon">
-        <img src="teknologi.png" alt="Divisi Teknologi">
-      </div>
-      <h3>Divisi Teknologi</h3>
-    </div>
-  </div>
-
-  <div class="btn-container">
-    <a href="divisi.html" class="btn-blue">Selengkapnya</a>
-  </div>
-</div>
-
-
-  <!-- JS Sidebar Toggle -->
-  <script>
-    function toggleSidebar() {
-      const sidebar = document.getElementById('sidebar');
-      const overlay = document.getElementById('overlay');
-      sidebar.classList.toggle('show');
-      overlay.classList.toggle('show');
-    }
-  </script>
-
   <!-- Footer -->
   <footer class="custom-footer">
     <div class="footer-content">
@@ -397,12 +288,6 @@
         <h4>Official</h4>
         <img src="LOGO KIR SMAN 6 MEDAN NEW.png" alt="Logo KIR" style="height: 40px; margin-right: 10px;">
         <img src="LOGO SMAN 6 MEDAN.png" alt="Logo SMAN 6" style="height: 40px;">
-      </div>
-      <div class="footer-column">
-        <h4>Alamat Sekolah</h4>
-        <p>Jalan Ansari No. 34, Medan</p>
-        <p>Sumatera Utara, Indonesia</p>
-        <p>Kode Pos 20214</p>
       </div>
     </div>
     <div class="footer-bottom">
